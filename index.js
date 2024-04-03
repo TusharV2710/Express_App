@@ -43,14 +43,6 @@ app.post('/add-faculty', upload.single('csvFile'), async (req, res) => {
   }
 });
 
-app.get('/og', async (req, res) => {
-  await organizeStudents().then((e) => { res.send("ok") })
-})
-
-app.get('/fetch', async (req, res) => {
-  const data = await Faculty.find({}).then((e) => { res.send(e) })
-})
-
 app.listen('3001', () => {
   console.log('server is running on http://127.0.0.1:3001')
 })
